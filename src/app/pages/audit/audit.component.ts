@@ -31,6 +31,7 @@ export class AuditComponent {
   
   
 /*
+
   navigateToCustomerDetails(customerId: number) {   
     this.router.navigate(['/customer', customerId]); 
   }
