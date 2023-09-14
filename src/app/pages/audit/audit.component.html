@@ -1,3 +1,71 @@
 <app-header></app-header>
 <app-nav></app-nav>
-<p>audit works!</p>
+<body>
+<style>
+
+
+    th{
+        font-size: xx-large;
+        margin-left: 1000 px;
+
+    }
+    
+    
+
+
+    tbody tr:hover{
+        background-color: gold;
+        
+        color: black;
+    }
+
+
+
+    tbody tr[data-type="ce"]{
+        display: none;
+    }
+
+    
+
+    
+</style>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th><h6>Numéro Compte</h6></th>
+        <th><h6>Solde</h6></th>
+        <th><h6>Type de Compte</h6></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="table-danger" *ngFor="let compte of comptes" [routerLink]="['/comptes', compte.id]">
+        <td>{{ compte.numCompte }}</td>
+        <td>{{ compte.solde }}</td>
+        <td>{{ compte.type }}</td>
+        
+      </tr>
+    </tbody>
+</table>
+
+<script>
+
+        let comptes = document.querySelectorAll('tbody tr')
+        comptes.forEach(compte=>{
+            
+            if(compte.type === 'ce') {
+                
+                  compte.style.display = "none"
+                
+            
+            
+        }})
+
+</script>
+
+
+
+
+</body>
