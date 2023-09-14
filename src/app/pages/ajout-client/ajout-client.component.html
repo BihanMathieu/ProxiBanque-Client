@@ -1,0 +1,12 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+<app-custom-input label="Nom" [(value)]="nom" id="nom" type="text" [required]="true"></app-custom-input>
+<app-custom-input label="Prenom" [(value)]="prenom" id="prenom" type="text" [required]="true"></app-custom-input>
+<app-custom-input label="Adresse" [(value)]="adresse" id="adresse" type="text" [required]="true"></app-custom-input>
+<app-custom-input label="Tel" [(value)]="tel" id="tel" type="text" [required]="true"></app-custom-input>
+<app-custom-input label="Code postal" [(value)]="codePostal" id="codePostal" type="text" [required]="true"></app-custom-input>
+<app-custom-input label="Ville" [(value)]="ville" id="ville" type="text" [required]="true"></app-custom-input>
+
+<button type="button" class="btn btn-primary" (click)="onSubmit()" >Ajouter client</button>
+

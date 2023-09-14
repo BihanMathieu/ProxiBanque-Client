@@ -1,0 +1,33 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+    <h2>Informations sur le client</h2>
+    <p>Nom: {{ client.id }}</p>
+    <p>Prenom {{ client.prenom }}</p>
+    <p>Tel: {{ client.tel }}</p>
+    <p>Adresse: {{ client.adresse }}</p>
+    <p>ville: {{ client.ville }}</p>
+    <p>Code postal: {{ client.codePostal }}</p>
+    <div>
+      <p>numero de compte courant: {{client.compteCourant?.numCompte}}</p>
+      <p>Solde Compte courant: {{client.compteCourant?.solde}}</p>
+      <p>Creation Compte courant: {{client.compteCourant?.creationDate}}</p>
+    </div>
+    
+    <div>
+      <p>numero de compte epargne: {{client.compteEpargne?.numCompte}}</p>
+      <p>Compte epargne: {{client.compteEpargne?.solde}}</p>
+      <p>Creation compte epargne: {{client.compteEpargne?.creationDate}}</p>
+    </div>
+  
+
+  <button type="button" class="btn btn-primary" (click)="openDeleteConfirmationModal()">Supprimer</button>
+  <button type="button" class="btn btn-primary" [routerLink]="['/modificationClient', client.id]">Modifier</button>
+
+  <app-modal 
+  *ngIf="showDeleteConfirmation"
+  [message]="'Voulez-vous vraiment supprimer ce client ?'"
+  (confirm)="confirmDelete()"
+  (cancel)="closeDeleteConfirmationModal()">
+</app-modal>
+

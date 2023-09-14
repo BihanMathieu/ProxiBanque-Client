@@ -1,0 +1,14 @@
+
+<div class="connexion">
+    <div class="d-flex align-items-center justify-content-center">
+        <img src="..\assets\img\icon.png" alt="Icon banque">
+    </div>
+    <form class="login-form">
+        <app-custom-input label="identifiant" [(value)]="username" id="identifiant" type="email" [required]="true"></app-custom-input>
+        <app-custom-input label="Mot de passe" [(value)]="password" id="password" type="password" [required]="true"></app-custom-input>
+        <button class="d-flex  mx-auto" (click)="onLogin()">Se connecter</button>
+    </form>
+</div>
+
+
+

@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="form-group col-6 mx-auto">
+    <label [for]="'Input'+id">{{label}}<span *ngIf="required" class="text-danger font-weight-bold"> *</span></label>
+    <input (input)="emitValue($event.target)" type="email" class="form-control" [id]="'Input'+id" [placeholder]="label" [value]="value" required>
+  </div>
+</div>

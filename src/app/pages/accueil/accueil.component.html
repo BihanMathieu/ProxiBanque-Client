@@ -1,0 +1,19 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nom du client</th>
+      <th>Solde du compte courant</th>
+      <th>Solde du compte épargne</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients" [routerLink]="['/customer', client.id]">
+      <td>{{ client.nom }}</td>
+      <td>{{ client.compteCourant?.solde || 'N/A' }}</td>
+      <td>{{ client.compteEpargne?.solde || 'N/A' }}</td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary" [routerLink]="['/ajoutClient']" >add</button>
