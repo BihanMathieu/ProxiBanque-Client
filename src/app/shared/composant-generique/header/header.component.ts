@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   conseiller: Conseiller
 
   ngOnInit(){
-    const conseiller = sessionStorage.getItem('conseiller')
+    const conseiller = localStorage.getItem('conseiller')
     if(conseiller){
       this.conseiller = JSON.parse(conseiller)
     }

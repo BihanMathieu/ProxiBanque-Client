@@ -23,7 +23,7 @@ export class ConnexionComponent {
     .set('password', this.password);
     this.http.get('http://localhost:8080/conseillers/auth', { params }).subscribe(response => {
       const conseiller = response as Conseiller;
-      sessionStorage.setItem('conseiller', JSON.stringify(conseiller));
+      localStorage.setItem('conseiller', JSON.stringify(conseiller));
       
   });
     this.router.navigate(['/accueil']);
