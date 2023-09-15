@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Conseiller } from '../../model/conseiller.model';
 
 
@@ -8,7 +8,7 @@ import { Conseiller } from '../../model/conseiller.model';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   conseiller: Conseiller
 
