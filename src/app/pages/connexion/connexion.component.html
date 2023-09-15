@@ -6,9 +6,15 @@
     <form class="login-form">
         <app-custom-input label="login" [(value)]="login" id="identifiant" type="email" [required]="true"></app-custom-input>
         <app-custom-input label="Mot de passe" [(value)]="password" id="password" type="password" [required]="true"></app-custom-input>
-        <button class="d-flex  mx-auto" (click)="onLogin()">Se connecter</button>
+        <button class="btn btn-success d-flex mx-auto mt-3" (click)="onLogin()" [disabled]="!login || !password">Connexion</button>
     </form>
+    <div *ngIf="messageErreur" class="alert alert-danger col-4 mx-auto mt-3 ">
+        <div class="d-flex justify-content-center">
+            {{ messageErreur }}
+        </div>
+    </div>
 </div>
+
 
 
 

@@ -1,7 +1,11 @@
-<div class="col-6">
-    <div class="modal-content">
-      <p>{{ message }}</p>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancelAction()">Annuler</button>
-          <button type="button" class="btn btn-primary" (click)="confirmAction()">Confirmer</button>
+<div class="modal-backdrop">
+    <div class="col-6 modal-container">
+      <div class="modal-content">
+        <div class="d-flex justify-content-center"> 
+            <p>{{ message }}</p>
+        </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancelAction()">Annuler</button>
+        <button type="button" class="btn btn-primary mt-1" (click)="confirmAction()">Confirmer</button>
+      </div>
     </div>
-</div>
+  </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Conseiller } from '../../model/conseiller.model';
+import { Router } from '@angular/router';
 
 
 
@@ -12,6 +13,8 @@ export class HeaderComponent implements OnInit {
 
   conseiller: Conseiller
 
+  constructor(private router: Router) {}
+
   ngOnInit(){
     const conseiller = localStorage.getItem('conseiller')
     if(conseiller){
@@ -19,4 +22,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  deconnexion(){
+    localStorage.removeItem('conseiller');
+    this.router.navigate(['/connexion']);
+  }
 }
