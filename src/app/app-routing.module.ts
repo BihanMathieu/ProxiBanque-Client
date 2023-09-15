@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'',redirectTo:'connexion',pathMatch:'full'},
   {path:'connexion', component:ConnexionComponent},
   {path:'accueil',component:AccueilComponent},
-  { path: 'customer/:id', component: DetailsClientComponent},
+  { path: 'client/:id', component: DetailsClientComponent},
   { path: 'audit', component: AuditComponent},
   { path: 'ajoutClient', component: AjoutClientComponent},
   { path: 'modificationClient/:id', component: ModificationClientComponent}

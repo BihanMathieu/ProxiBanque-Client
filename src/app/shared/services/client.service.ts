@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Client } from '../model/client.model';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -21,12 +20,17 @@ export class ClientService {
     return this.http.get<Client>(url);
   }
 
-  saveCustomer(client: Client): Observable<Client> {
-    return this.http.post<Client>(this.apiUrl, client);
+  saveCustomer(client: Client, id: number): Observable<Client> {
+    return this.http.post<Client>(this.apiUrl + '/conseiller/' + id, client);
   }
 
   deleteCustomer(customerId: number): Observable<void> {
     const url = `${this.apiUrl}/${customerId}`;
     return this.http.delete<void>(url);
+  }
+
+  updateCustomer(client: Client, clientId: number): Observable<Client> {
+    const url = `${this.apiUrl}/${clientId}`;
+    return this.http.put<Client>(url, client);
   }
 }

@@ -9,10 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let client of clients" [routerLink]="['/customer', client.id]">
+    <tr *ngFor="let client of clients" [routerLink]="['/client', client.id]">
       <td>{{ client.nom }}</td>
-      <td>{{ client.compteCourant?.solde || 'N/A' }}</td>
-      <td>{{ client.compteEpargne?.solde || 'N/A' }}</td>
+      <td>{{ client.compteCourant?.solde }}</td>
+      <td>{{ client.compteEpargne?.solde }}</td>
     </tr>
   </tbody>
 </table>
