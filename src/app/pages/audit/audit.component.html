@@ -3,34 +3,21 @@
 <body>
 <style>
 
-
-    th{
-        font-size: xx-large;
-        margin-left: 1000 px;
-
-    }
-    
-    
+  
 
 
     tbody tr:hover{
         background-color: gold;
         
         color: black;
+        
+
     }
 
 
 
-    tbody tr[data-type="ce"]{
-        display: none;
-    }
 
-    
-
-    
 </style>
-
-
 <table class="table">
     <thead>
       <tr>
@@ -50,22 +37,3 @@
     </tbody>
 </table>
 
-<script>
-
-        let comptes = document.querySelectorAll('tbody tr')
-        comptes.forEach(compte=>{
-            
-            if(compte.type === 'ce') {
-                
-                  compte.style.display = "none"
-                
-            
-            
-        }})
-
-</script>
-
-
-
-
-</body>
