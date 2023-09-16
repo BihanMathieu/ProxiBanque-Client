@@ -1,6 +1,6 @@
 export interface Agence {
   id: number;
-  name: string;
+  nom: string;
   codeAlpha: string;
   creationDate: Date;
 }

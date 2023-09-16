@@ -10,7 +10,7 @@
     [required]="true"
   ></app-custom-input>
   <app-custom-input
-    label="Prenom"
+    label="Prénom"
     [(value)]="prenom"
     id="prenom"
     type="text"
@@ -24,7 +24,7 @@
     [required]="true"
   ></app-custom-input>
   <app-custom-input
-    label="Tel"
+    label="Tél."
     [(value)]="tel"
     id="tel"
     type="text"
@@ -51,7 +51,7 @@
     (click)="onSubmit()"
     [disabled]="!nom || !adresse || !tel || !codePostal || !ville"
   >
-    Ajouter client
+    Ajouter un client
   </button>
 </form>
 
