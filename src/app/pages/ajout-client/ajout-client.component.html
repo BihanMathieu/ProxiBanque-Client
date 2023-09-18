@@ -51,18 +51,18 @@
 
   <p></p>
 
-  <div class=" d-flex justify-content-center">
-  <button type="button" class="btn btn-danger me-2" [routerLink]="['/client']">Annuler</button>
-  <button
+  <div class="d-flex justify-content-center">
+    <button
       type="button"
-      class="btn btn-primary "
-      (click)="onSubmit()"
-      [disabled]="!nom || !prenom || !adresse || !tel || !codePostal || !ville"
+      class="btn btn-danger me-2"
+      [routerLink]="['/accueil']"
     >
-    
-    Ajouter un client
-  </button>
-</div>
+      Retour
+    </button>
+    <button type="button" class="btn btn-primary " (click)="onSubmit()" [disabled]="!nom || !prenom || !adresse || !tel || !codePostal || !ville">
+      Modifier
+    </button>
+  </div>
   
 
 
