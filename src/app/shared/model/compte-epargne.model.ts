@@ -4,4 +4,5 @@ export interface CompteEpargne {
     numCompte: string;
     solde: number;
     creationDate: string;
+    dtype: string;
   }

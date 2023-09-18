@@ -1,6 +1,10 @@
 <app-header></app-header>
 <app-nav></app-nav>
 
+<div class="container">
+<button type="button" class="btn btn-primary" [routerLink]="['/client', client.id]">Retour</button>
+</div>
+
 <form>
   <app-custom-input
     label="Nom"
@@ -44,13 +48,17 @@
     type="text"
     [required]="true"
   ></app-custom-input>
+  <p> </p>
 
-  <button
-    type="button"
-    class="btn btn-primary"
-    (click)="onSubmit()"
-    [disabled]="!nom || !prenom || !adresse || !tel || !codePostal || !ville"
-  >
-    Mettre à jour le client
-  </button>
+  <div class=" d-flex justify-content-center">
+    <button type="button" class="btn btn-danger me-2" [routerLink]="['/client', client.id]">Annuler</button>
+    <button
+      type="button"
+      class="btn btn-primary "
+      (click)="onSubmit()"
+      [disabled]="!nom || !prenom || !adresse || !tel || !codePostal || !ville"
+    >
+      Mettre à jour
+    </button>
+  </div>
 </form>

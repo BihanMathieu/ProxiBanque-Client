@@ -4,5 +4,5 @@ export interface CompteCourant {
   numCompte: string;
   solde: number;
   creationDate: string;
-
+  dtype: string;
 }

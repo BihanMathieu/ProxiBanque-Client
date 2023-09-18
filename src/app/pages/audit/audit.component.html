@@ -5,8 +5,11 @@
     <thead>
       <tr>
         <th><h6>Numéro de compte</h6></th>
+        
         <th><h6>Solde</h6></th>
         <th><h6>Type de Compte</h6></th>
+        
+        
       </tr>
     </thead>
     <tbody>
@@ -16,8 +19,10 @@
         [routerLink]="['/comptes', compte.id]"
       >
         <td>{{ compte.numCompte }}</td>
+        
         <td>{{ compte.solde }}</td>
         <td>{{ compte.type }}</td>
+        
       </tr>
     </tbody>
   </table>
