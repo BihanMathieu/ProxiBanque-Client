@@ -9,8 +9,11 @@
 
 <div class="container">
   <div class="row" *ngIf="client">
-    <h2 class="col-12">{{ client.nom }} {{ client.prenom }} </h2>
-  
+ 
+
+    <h2 class="col-12">{{ client.nom }} {{ client.prenom }}</h2>
+
+
     <div class="col-12 col-md-6">
       <p>Id : {{ client.id }}</p>
       <p>Tél. : {{ client.tel }}</p>
@@ -18,41 +21,62 @@
       <p>Ville : {{ client.ville }}</p>
       <p>Code postal : {{ client.codePostal }}</p>
     </div>
-  
+
     <div class="col-12 col-md-6">
       <div>
-        <p>Numéro de compte courant : {{client.compteCourant?.numCompte}}</p>
-        <p>Solde Compte courant : {{client.compteCourant?.solde}}</p>
-        <p>Creation Compte courant : {{client.compteCourant?.creationDate}}</p>
+        <p>Numéro de compte courant : {{ client.compteCourant?.numCompte }}</p>
+        <p>Solde Compte courant : {{ client.compteCourant?.solde }}</p>
+        <p>
+          Creation Compte courant : {{ client.compteCourant?.creationDate }}
+        </p>
       </div>
-      
+
       <div>
-        <p>Numéro de compte épargne : {{client.compteEpargne?.numCompte}}</p>
-        <p>Compte épargne : {{client.compteEpargne?.solde}}</p>
-        <p>Création compte épargne : {{client.compteEpargne?.creationDate}}</p>
+        <p>Numéro de compte épargne : {{ client.compteEpargne?.numCompte }}</p>
+        <p>Compte épargne : {{ client.compteEpargne?.solde }}</p>
+        <p>
+          Création compte épargne : {{ client.compteEpargne?.creationDate }}
+        </p>
       </div>
-    </div>
-    
-    
-    <div class=" d-flex justify-content-center">
-      <button type="button" class="btn btn-danger me-2" (click)="openDeleteConfirmationModal()">Supprimer</button>
-      <button type="button" class="btn btn-primary" [routerLink]="['/modificationClient', client.id]">Modifier</button>
     </div>
 
+    <div class="d-flex justify-content-center">
+      <button
+        type="button"
+        class="btn btn-danger me-2"
+        (click)="openDeleteConfirmationModal()"
+      >
+        Supprimer
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        [routerLink]="['/modificationClient', client.id]"
+      >
+        Modifier
+      </button>
+    </div>
   </div>
 
-  <app-modal 
+  <app-modal
     *ngIf="showDeleteConfirmation"
     [message]="'Voulez-vous vraiment supprimer ce client ?'"
     (confirm)="confirmDelete()"
-    (cancel)="closeDeleteConfirmationModal()">
+    (cancel)="closeDeleteConfirmationModal()"
+  >
   </app-modal>
 </div>
 
-<app-modal
+<div *ngIf="messageErreur" class="alert alert-danger col-4 mx-auto mt-3">
+  <div class="d-flex justify-content-center">
+    {{ messageErreur }}
+  </div>
+</div>
+
+<!-- <app-modal
   *ngIf="showDeleteConfirmation"
   [message]="'Voulez-vous vraiment supprimer ce client ?'"
   (confirm)="confirmDelete()"
   (cancel)="closeDeleteConfirmationModal()"
 >
-</app-modal>
+</app-modal> -->

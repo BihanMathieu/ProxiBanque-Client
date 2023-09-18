@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClientService } from '../../shared/services/client.service';
 import { Client } from '../../shared/model/client.model';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-details-client',
@@ -12,6 +13,7 @@ export class DetailsClientComponent implements OnInit {
   showDeleteConfirmation = false;
   clientId: number;
   client: Client;
+  messageErreur: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,8 +48,19 @@ export class DetailsClientComponent implements OnInit {
   }
 
   confirmDelete() {
-    this.clientService.deleteCustomer(this.clientId).subscribe(() => {
-      this.router.navigate(['/accueil']);
-    });
+    this.clientService
+      .deleteCustomer(this.clientId)
+      .pipe(
+        catchError((error) => {
+          this.closeDeleteConfirmationModal();
+          this.messageErreur = 'Vous ne pouvez pas supprimer un client dont les comptes ne sont pas à 0.';
+          return throwError(error);
+        })
+      )
+      .subscribe(
+        () => {
+          this.router.navigate(['/accueil']);
+        }
+      );
   }
 }
