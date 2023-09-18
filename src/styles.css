@@ -9,7 +9,10 @@ tbody th,tr{
     text-align: center;
 }
 
+
 tbody tr:hover{
+    
     cursor: pointer;
     font-size: large;
 }
+
