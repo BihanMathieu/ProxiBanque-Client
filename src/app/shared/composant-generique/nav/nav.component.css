@@ -1,3 +1,13 @@
 h2{
     font-size: 1.5rem;
 }
+
+h2 {
+    font-size: 1.5rem;
+    box-sizing: border-box; 
+    border-bottom: 4px solid transparent; 
+  }
+  
+  h2:hover {
+    border-bottom: 4px solid rgb(86, 86, 254); 
+  }
