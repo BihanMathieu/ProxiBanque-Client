@@ -1,20 +1,33 @@
-
 <div class="connexion">
-    <div class="d-flex align-items-center justify-content-center">
-        <img src="..\assets\img\icon.png" alt="Icon banque">
+  <div class="d-flex align-items-center justify-content-center">
+    <img src="..\assets\img\icon.png" alt="Icon banque" />
+  </div>
+  <form class="login-form">
+    <app-custom-input
+      label="Login"
+      [(value)]="login"
+      id="identifiant"
+      type="email"
+      [required]="true"
+    ></app-custom-input>
+    <app-custom-input
+      label="Mot de passe"
+      [(value)]="password"
+      id="password"
+      type="password"
+      [required]="true"
+    ></app-custom-input>
+    <button
+      class="btn btn-success d-flex mx-auto mt-3"
+      (click)="onLogin()"
+      [disabled]="!login || !password"
+    >
+      Connexion
+    </button>
+  </form>
+  <div *ngIf="messageErreur" class="alert alert-danger col-4 mx-auto mt-3">
+    <div class="d-flex justify-content-center">
+      {{ messageErreur }}
     </div>
-    <form class="login-form">
-        <app-custom-input label="login" [(value)]="login" id="identifiant" type="email" [required]="true"></app-custom-input>
-        <app-custom-input label="Mot de passe" [(value)]="password" id="password" type="password" [required]="true"></app-custom-input>
-        <button class="btn btn-success d-flex mx-auto mt-3" (click)="onLogin()" [disabled]="!login || !password">Connexion</button>
-    </form>
-    <div *ngIf="messageErreur" class="alert alert-danger col-4 mx-auto mt-3 ">
-        <div class="d-flex justify-content-center">
-            {{ messageErreur }}
-        </div>
-    </div>
+  </div>
 </div>
-
-
-
-

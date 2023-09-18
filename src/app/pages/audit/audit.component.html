@@ -1,39 +1,24 @@
 <app-header></app-header>
 <app-nav></app-nav>
 <body>
-<style>
-
-  
-
-
-    tbody tr:hover{
-        background-color: gold;
-        
-        color: black;
-        
-
-    }
-
-
-
-
-</style>
-<table class="table">
+  <table class="table">
     <thead>
       <tr>
-        <th><h6>Numéro Compte</h6></th>
+        <th><h6>Numéro de compte</h6></th>
         <th><h6>Solde</h6></th>
         <th><h6>Type de Compte</h6></th>
       </tr>
     </thead>
     <tbody>
-
-      <tr class="table-danger" *ngFor="let compte of comptes" [routerLink]="['/comptes', compte.id]">
+      <tr
+        class="table-danger"
+        *ngFor="let compte of comptes"
+        [routerLink]="['/comptes', compte.id]"
+      >
         <td>{{ compte.numCompte }}</td>
         <td>{{ compte.solde }}</td>
         <td>{{ compte.type }}</td>
-        
       </tr>
     </tbody>
-</table>
-
+  </table>
+</body>
