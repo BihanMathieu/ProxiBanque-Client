@@ -24,9 +24,9 @@ export class ClientService {
     return this.http.post<Client>(this.apiUrl + '/conseiller/' + id, client);
   }
 
-  deleteCustomer(customerId: number): Observable<void> {
+  deleteCustomer(customerId: number): Observable<any> {
     const url = `${this.apiUrl}/${customerId}`;
-    return this.http.delete<void>(url);
+    return this.http.delete<any>(url);
   }
 
   updateCustomer(client: Client, clientId: number): Observable<Client> {
