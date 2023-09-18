@@ -13,6 +13,7 @@ import { CompteEpargne } from '../../shared/model/compte-epargne.model';
 export class ModificationClientComponent implements OnInit {
   clientId: number;
   client: Client;
+  showModificationConfirmation = false;
 
   nom: string = '';
   prenom = '';
@@ -54,7 +55,16 @@ export class ModificationClientComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  openModificationConfirmationModal() {
+    this.showModificationConfirmation = true;
+    console.log(this.showModificationConfirmation);
+  }
+
+  closeModificationConfirmationModal() {
+    this.showModificationConfirmation = false;
+  }
+
+  confirmModif() {
     const newClient: Client = {
       id: 0,
       nom: this.nom,

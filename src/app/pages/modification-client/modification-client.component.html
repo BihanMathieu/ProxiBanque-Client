@@ -55,10 +55,18 @@
     <button
       type="button"
       class="btn btn-primary "
-      (click)="onSubmit()"
+      (click)="openModificationConfirmationModal()"
       [disabled]="!nom || !prenom || !adresse || !tel || !codePostal || !ville"
     >
       Mettre à jour
     </button>
+
+    <app-modal
+    *ngIf="showModificationConfirmation "
+    [message]="'Voulez-vous vraiment modifier ce client ?'"
+    (confirm)="confirmModif()"
+    (cancel)="closeModificationConfirmationModal()"
+  >
+  </app-modal>
   </div>
 </form>

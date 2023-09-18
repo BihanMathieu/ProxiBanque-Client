@@ -5,7 +5,14 @@ html body{
     
 }
 
-tbody tr:hover{
-    cursor: pointer;
-    font-size: x-large;
+tbody th,tr{
+    text-align: center;
 }
+
+
+tbody tr:hover{
+    
+    cursor: pointer;
+    font-size: large;
+}
+

@@ -1,29 +1,31 @@
 <app-header></app-header>
 <app-nav></app-nav>
 <body>
-  <table class="table">
-    <thead>
-      <tr>
-        <th><h6>Numéro de compte</h6></th>
-        
-        <th><h6>Solde</h6></th>
-        <th><h6>Type de Compte</h6></th>
-        
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        class="table-danger"
-        *ngFor="let compte of comptes"
-        [routerLink]="['/comptes', compte.id]"
-      >
-        <td>{{ compte.numCompte }}</td>
-        
-        <td>{{ compte.solde }}</td>
-        <td>{{ compte.type }}</td>
-        
-      </tr>
-    </tbody>
-  </table>
+  <div class="col-10 mx-auto">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h6>Numéro de compte</h6></th>
+          
+          <th><h6>Solde</h6></th>
+          <th><h6>Type de Compte</h6></th>
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table-danger"
+          *ngFor="let compte of comptes"
+          [routerLink]="['/comptes', compte.id]"
+        >
+          <td>{{ compte.numCompte }}</td>
+          
+          <td>{{ compte.solde }}</td>
+          <td>{{ compte.type }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
