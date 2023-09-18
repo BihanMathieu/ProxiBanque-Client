@@ -52,8 +52,8 @@ export class DetailsClientComponent implements OnInit {
       .deleteCustomer(this.clientId)
       .pipe(
         catchError((error) => {
-          this.messageErreur =
-            'Vous ne pouvez pas supprimer un client dont les comptes ne sont pas à 0.';
+          this.closeDeleteConfirmationModal();
+          this.messageErreur = 'Vous ne pouvez pas supprimer un client dont les comptes ne sont pas à 0.';
           return throwError(error);
         })
       )
@@ -61,9 +61,6 @@ export class DetailsClientComponent implements OnInit {
         () => {
           this.router.navigate(['/accueil']);
         }
-        // (error) => {
-        //   console.log('Hello');
-        // }
       );
   }
 }

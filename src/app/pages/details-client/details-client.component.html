@@ -54,12 +54,13 @@
     (confirm)="confirmDelete()"
     (cancel)="closeDeleteConfirmationModal()"
   >
-    <div *ngIf="messageErreur" class="alert alert-danger col-4 mx-auto mt-3">
-      <div class="d-flex justify-content-center">
-        {{ messageErreur }}
-      </div>
-    </div>
   </app-modal>
+</div>
+
+<div *ngIf="messageErreur" class="alert alert-danger col-4 mx-auto mt-3">
+  <div class="d-flex justify-content-center">
+    {{ messageErreur }}
+  </div>
 </div>
 
 <!-- <app-modal
