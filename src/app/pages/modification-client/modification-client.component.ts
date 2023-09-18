@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientService } from '../shared/services/client.service';
+import { ClientService } from '../../shared/services/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Client } from '../shared/model/client.model';
-import { CompteCourant } from '../shared/model/compte-courant.model';
-import { CompteEpargne } from '../shared/model/compte-epargne.model';
+import { Client } from '../../shared/model/client.model';
+import { CompteCourant } from '../../shared/model/compte-courant.model';
+import { CompteEpargne } from '../../shared/model/compte-epargne.model';
 
 @Component({
   selector: 'app-modification-client',
