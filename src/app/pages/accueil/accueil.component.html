@@ -18,6 +18,7 @@
         <td>{{ client.compteCourant?.solde }} €</td>
         <td>{{ client.compteEpargne?.solde }} €</td>
         <td>
+
           <button type="button" class="btn btn-success" *ngIf="client.compteCourant!.solde >= 10000 || client.compteEpargne!.solde >= 10000">
             Offre
           </button>
@@ -33,4 +34,3 @@
 >
   Ajouter un client
 </button>
-
