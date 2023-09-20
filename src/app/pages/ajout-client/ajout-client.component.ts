@@ -29,7 +29,7 @@ export class AjoutClientComponent implements OnInit {
     private compteService: CompteService,
     private route: ActivatedRoute,
     private router: Router
-  ) {} // Injectez le service ClientService
+  ) {} 
 
   ngOnInit(): void {
     const conseiller = localStorage.getItem('conseiller');
@@ -53,7 +53,6 @@ export class AjoutClientComponent implements OnInit {
 
     this.clientService.saveCustomer(newClient, this.conseiller.id).subscribe(
       (savedClient) => {
-        console.log('Client enregistré avec succès : ', savedClient);
         this.router.navigate(['/accueil']);
       },
       (error) => {

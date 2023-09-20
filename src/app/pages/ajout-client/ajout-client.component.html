@@ -6,61 +6,19 @@
 </div>
 
 <form>
-  <app-custom-input
-    label="Nom"
-    [(value)]="nom"
-    id="nom"
-    type="text"
-    [required]="true"
-  ></app-custom-input>
-  <app-custom-input
-    label="Prénom"
-    [(value)]="prenom"
-    id="prenom"
-    type="text"
-    [required]="true"
-  ></app-custom-input>
-  <app-custom-input
-    label="Adresse"
-    [(value)]="adresse"
-    id="adresse"
-    type="text"
-    [required]="true"
-  ></app-custom-input>
-  <app-custom-input
-    label="Tél."
-    [(value)]="tel"
-    id="tel"
-    type="text"
-    [required]="true"
-  ></app-custom-input>
-  <app-custom-input
-    label="Code postal"
-    [(value)]="codePostal"
-    id="codePostal"
-    type="text"
-    [required]="true"
-  ></app-custom-input>
-  <app-custom-input
-    label="Ville"
-    [(value)]="ville"
-    id="ville"
-    type="text"
-    [required]="true"
-  ></app-custom-input>
+  <app-custom-input label="Nom" [(value)]="nom" id="nom" type="text" [required]="true"></app-custom-input>
+  <app-custom-input label="Prénom" [(value)]="prenom" id="prenom" type="text" [required]="true"></app-custom-input>
+  <app-custom-input label="Adresse" [(value)]="adresse" id="adresse" type="text" [required]="true"></app-custom-input>
+  <app-custom-input label="Tél." [(value)]="tel" id="tel" type="text" [required]="true"></app-custom-input>
+  <app-custom-input label="Code postal" [(value)]="codePostal" id="codePostal" type="text" [required]="true"></app-custom-input>
+  <app-custom-input label="Ville" [(value)]="ville" id="ville" type="text" [required]="true"></app-custom-input>
 
-  <p></p>
+ 
 
-  <div class=" d-flex justify-content-center">
+  <div class=" d-flex justify-content-center mt-4">
   <button type="button" class="btn btn-danger me-2" [routerLink]="['/accueil']">Annuler</button>
-  <button
-      type="button"
-      class="btn btn-primary "
-      (click)="onSubmit()"
-      [disabled]="!nom || !prenom || !adresse || !tel || !codePostal || !ville"
-    >
-    
-    Ajouter un client
-  </button>
-</div>
+  <button type="button" class="btn btn-primary " (click)="onSubmit()" 
+  [disabled]="!nom || !prenom || !adresse || !tel || !codePostal || !ville"> Ajouter un client</button>
+  </div>
+</form>
   
