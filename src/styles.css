@@ -1,18 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-html body{
-    padding: 0;
-    margin: 0;
-    
+html body {
+  padding: 0;
+  margin: 0;
 }
 
-tbody th,tr{
-    text-align: center;
+tbody th tr {
+  text-align: center;
 }
 
-
-tbody tr:hover{
-    
-    cursor: pointer;
-    font-size: large;
+tbody tr:hover {
+  cursor: pointer;
+  border: 1.4px solid blue;
 }
-

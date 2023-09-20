@@ -11,8 +11,8 @@ export class ClientService {
 
   constructor(private http: HttpClient) {}
 
-  getCustomers(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.apiUrl);
+  getCustomers(id: number): Observable<Client[]> {
+    return this.http.get<Client[]>(this.apiUrl + '/conseiller/' + id);
   }
 
   getCustomerById(customerId: number): Observable<Client> {
@@ -26,7 +26,7 @@ export class ClientService {
 
   deleteCustomer(customerId: number): Observable<string> {
     const url = `${this.apiUrl}/${customerId}`;
-    return this.http.delete(url,  { responseType: 'text' });
+    return this.http.delete(url, { responseType: 'text' });
   }
 
   updateCustomer(client: Client, clientId: number): Observable<Client> {
