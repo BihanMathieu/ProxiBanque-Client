@@ -3,6 +3,7 @@ import { Client } from '../../shared/model/client.model';
 
 import { Router } from '@angular/router';
 import { ClientService } from '../../shared/services/client.service';
+import { Conseiller } from 'src/app/shared/model/conseiller.model';
 
 @Component({
   selector: 'app-accueil',
@@ -12,14 +13,20 @@ import { ClientService } from '../../shared/services/client.service';
 export class AccueilComponent implements OnInit {
   clients!: Client[];
 
+  conseiller!: Conseiller;
+
   constructor(private clientService: ClientService, private router: Router) {}
 
   ngOnInit() {
-    this.loadCustomers();
+    const conseiller = localStorage.getItem('conseiller');
+    if (conseiller) {
+      this.conseiller = JSON.parse(conseiller);
+    }
+    this.loadCustomers(this.conseiller.id);
   }
 
-  loadCustomers() {
-    this.clientService.getCustomers().subscribe((data) => {
+  loadCustomers(conseillerId: number) {
+    this.clientService.getCustomers(conseillerId).subscribe((data) => {
       this.clients = data;
     });
   }
